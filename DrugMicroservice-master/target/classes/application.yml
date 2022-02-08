@@ -1,0 +1,33 @@
+authservice:
+  client:
+    name: authentication
+    url: http://localhost:8090/authapp
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: trace
+        type:
+          descriptor:
+            sql: trace
+      springframework: info
+server:
+  port: 8081
+  servlet:
+    context-path: /drugdetailapp
+spring:
+  application:
+    name: drugdetailapp
+  datasource:
+    driverClassName: org.h2.Driver
+    initialization-mode: always
+    password: pwd
+    url: jdbc:h2:mem:drugsdb
+    username: govind
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
